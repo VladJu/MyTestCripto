@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyTestCripto</string>
+    <string name="helloname">HelloName</string>
+    <string name="buttonsave">ButtonSave</string>
+    <string name="textviewshow">TextViewShow</string>
+    <string name="start">Старт</string>
+    <string name="pause">Пауза</string>
+    <string name="finished">Завершить</string>
+</resources>

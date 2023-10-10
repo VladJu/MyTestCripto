@@ -2,6 +2,8 @@ package com.example.mytestcripto.pojo
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.mytestcripto.api.ApiFactory.BASE_IMAGE_URL
+import com.example.mytestcripto.utils.convertTimestampToRealTime
 import com.google.gson.annotations.Expose
 
 import com.google.gson.annotations.SerializedName
@@ -19,7 +21,7 @@ data class CoinPriceInfo(
     @PrimaryKey
     @SerializedName("FROMSYMBOL")
     @Expose
-    val fromsymbol: String? = null,
+    val fromsymbol: String,
 
     @SerializedName("TOSYMBOL")
     @Expose
@@ -41,4 +43,11 @@ data class CoinPriceInfo(
     @SerializedName("IMAGEURL")
     @Expose
     val imageurl: String? = null
-)
+){
+    fun getFormattedTime() : String{
+       return convertTimestampToRealTime(lastupdate.toLong())
+    }
+    fun getFullImageUrl() : String{
+        return BASE_IMAGE_URL + imageurl
+    }
+}

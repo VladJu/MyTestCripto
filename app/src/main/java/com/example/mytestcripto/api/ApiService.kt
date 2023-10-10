@@ -1,7 +1,7 @@
 package com.example.mytestcripto.api
 
 import com.example.mytestcripto.pojo.CoinInfoListOfData
-import com.example.mytestcripto.pojo.CoinInfoRawData
+import com.example.mytestcripto.pojo.CoinPriceInfoRawData
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -19,7 +19,7 @@ interface ApiService {
         @Query(QUERY_PARAM_API_KEY) apiKey: String = "",
         @Query(QUERY_PARAM_FROM_SYMBOLS) fSyms: String,
         @Query(QUERY_PARAM_TO_SYMBOLS) tSyms: String = CURRENCY
-    ) : Single<CoinInfoRawData>
+    ) : Single<CoinPriceInfoRawData>
 
 
     companion object {
